@@ -1,11 +1,11 @@
-P = int(input())
-C = int(input())
-points = P*50
-points_loss = C*10
+R = int(input("number of regular boxes:"))
+S = int(input("number of small boxes:"))
 
-F = points - points_loss
+total_reg = 8 * R
+total_small = 3 * S
 
-if points > points_loss:
-    F+= 500
+total_cupckeas = total_reg + total_small
 
-print(F)
+leftover = total_cupckeas - 28
+
+print("the total number of cupcakes left over is:", leftover)

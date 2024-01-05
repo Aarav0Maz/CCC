@@ -1,41 +1,33 @@
-Chilis_values = {"Poblano": 1500, "Miralsol": 6000, "Serrano": 15500, "Cayenne": 40000, "Thai": 75000, "Habanero": 1500 }
+def FergusonballRating(players1):
+    star_rated = 0
+    for player in players1:
+        calculations = player[0] * 5 - player[1] * 3
+        if calculations > 40:
+            star_rated += 1
 
-NumberOfChili = int(input("enter the number of chili:"))
+    return star_rated
+    
 
-total_shu = 0
+def main():
+#input for number of players
+    n = int(input())
+#list to store player stats
+    players = []
 
-for _ in range(NumberOfChili):
-    typeOfChilli = input("type of chili:").strip()
-
-    total_shu += Chilis_values.get(typeOfChilli,0)
-
-print("the SHU of the chili is", total_shu )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    for _ in range(n):
+        #points input
+        p = int(input().strip())
+        #foul input
+        f = int(input().strip())
+        #put them in a list
+        players.append([p ,f])
+    result = FergusonballRating(players)
+    if result == n:
+        print(f"{result}+")
+    else:
+        print(result)
 
 
 
-
-
-
-
-
-
-
-
+if __name__ == "__main__":
+    main()
